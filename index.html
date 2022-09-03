@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            max-width: 700px;
+            min-height: 100vh;
+            margin: 0 auto;
+            background-color: #FBFBF9;
+        }
+        .none {
+            display: none;
+        }
+        button {
+            border-radius: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Rock, Paper, scissors</h3>
+    <h4>Rule of this game:</h4>
+    <ul>
+       <li>Rock beats scissors, lose to paper</li>
+       <li>Paper beats rock, lose to scissors</li>
+       <li>Scissors beats paper, lose to rock</li>
+       <li>If two are the same, it's a tie</li>
+    </ul>
+   <h3 id="result"></h3>
+    <h4 id="record"></h4>
+    <h4 id="opponent"></h4>
+    <h4 id="you"></h4>
+    <button id="play_again" class="none">Again ?</button>
+    <button id="rock">rock</button>
+    <button id="paper">paper</button>
+    <button id="scissors">scissors</button>
+    <script src="script.js"></script>
+</body>
+</html>
