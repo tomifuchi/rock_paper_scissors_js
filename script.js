@@ -72,7 +72,7 @@ function compare_to_computer() {
         updateStats("Computer win!");
     }
 
-    if(player_score >= 3 || opponent_score >= 3){
+    if(player_score >= 5 || opponent_score >= 5){
       if(player_score !== opponent_score){
         if (player_score > opponent_score) {
         let congrats_variation = [
