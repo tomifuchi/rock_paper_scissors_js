@@ -8,13 +8,19 @@ const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 const play_again = document.getElementById("play_again");
 
+
+//Generate random number from 0 to not including max_num 
+function randNum(max_num){
+  return Math.floor(Math.random() * max_num);
+}
+
 function generate_random_move(){
     let valid_moves = ['rock','paper','scissors'];
-    return valid_moves[Math.floor(Math.random()*3)];
+    return valid_moves[randNum(valid_moves.length)];
 }
 
 rock.addEventListener('click', () => {
-   player_move = 'rock';
+    player_move = 'rock';
     compare_to_computer();
 })
 paper.addEventListener('click', () => {
@@ -73,7 +79,7 @@ function compare_to_computer() {
     }
 
     if(player_score >= 5 || opponent_score >= 5){
-      if(player_score !== opponent_score){
+      if(player_score != opponent_score){
         if (player_score > opponent_score) {
         let congrats_variation = [
           'Congrats ! You win !',
@@ -81,10 +87,7 @@ function compare_to_computer() {
           'Nice!',
           "How did you do that, that is awesome!"
         ];
-          updateStats(congrats_variation[
-          Math.floor(Math.random()*congrats_variation.length)
-          ]
-         );
+          updateStats(congrats_variation[randNum(congrats_variation.length)]);
         } else {
         let demotivation_variations = [
           'Thats too bad, lets try again.',
@@ -93,26 +96,21 @@ function compare_to_computer() {
           'Forget to increase your luck ?',
           'How about another round ?'
         ];
-          updateStats(
-          demotivation_variations[
-          Math.floor(Math.random()*demotivation_variations.length)
-          ]
-        );
+          updateStats(demotivation_variations[randNum(demotivation_variations.length)]);
         }
         toggleUI();
       }
     }
 }
-
 play_again.addEventListener('click', resetStats);
 
 function resetStats(){
-  toggleUI();
   player_score = 0;
   opponent_score = 0;
   player_move = "";
   opponent_move = "";
   updateStats("Make your move!");
+  toggleUI();
 }
 
 /*Expected input

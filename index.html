@@ -6,38 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            max-width: 700px;
-            min-height: 100vh;
-            margin: 0 auto;
-            background-color: #FBFBF9;
+        * {
+            box-sizing: border-box;
         }
+
+        body{
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: black; 
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
         .none {
             display: none;
         }
+
         button {
+            border: 1px solid #777;
+            background-color: #fff;
             border-radius: 5px;
-            padding: 5px;
+            padding: 5px 25px;
+            color: black;
+        }
+
+
+        /* For the card */
+        .flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            max-width: 800px;
+            background-color: #fff;
+            padding: 4vh 5vw;
+            border-radius: 10px;
+        }
+
+
+        .button-container{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .button-container button {
+            flex: 1;
+        }
+
+        .button-container button{
+            transition: 0.20s;
+            transform: translateY(0);
+        }
+
+        .button-container button:hover{
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+
+            transition: 0.20s;
+            transform: translateY(-15%);
+        }
+
+        @media (max-width: 455px) {
+            .card{
+                width: 97%;
+            }
+            .button-container {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <h3>Rock, Paper, scissors</h3>
-    <h4>Rule of this game:</h4>
-    <ul>
-       <li>Rock beats scissors, lose to paper</li>
-       <li>Paper beats rock, lose to scissors</li>
-       <li>Scissors beats paper, lose to rock</li>
-       <li>If two are the same, it's a tie</li>
-    </ul>
-   <h3 id="result"></h3>
-    <h4 id="record"></h4>
-    <h4 id="opponent"></h4>
-    <h4 id="you"></h4>
-    <button id="play_again" class="none">Again ?</button>
-    <button id="rock">rock</button>
-    <button id="paper">paper</button>
-    <button id="scissors">scissors</button>
-    <script src="script.js"></script>
+    <div class="flex card">
+      <h3>Rock, Paper, scissors</h3>
+      <h4>Rule of this game:</h4>
+      <ul>
+         <li>Rock beats scissors, lose to paper</li>
+         <li>Paper beats rock, lose to scissors</li>
+         <li>Scissors beats paper, lose to rock</li>
+         <li>If two are the same, it's a tie</li>
+      </ul>
+      <h3 id="result"></h3>
+      <h4 id="record"></h4>
+      <h4 id="opponent"></h4>
+      <h4 id="you"></h4>
+      <div class="button-container">
+        <button id="play_again" class="none">Again ?</button>
+        <button id="rock">rock</button>
+        <button id="paper">paper</button>
+        <button id="scissors">scissors</button>
+      </div> 
+    </div>
 </body>
+    <script src="script.js"></script>
 </html>
